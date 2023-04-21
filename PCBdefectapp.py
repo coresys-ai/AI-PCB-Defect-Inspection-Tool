@@ -11,7 +11,7 @@ import time
 
 def imageInput(device, src):
     
-    if src == 'Upload your own data.':
+    if src == 'Upload your own image.':
         image_file = st.file_uploader("Upload An Image", type=['png', 'jpeg', 'jpg'])
         col1, col2 = st.columns(2)
         if image_file is not None:
@@ -41,10 +41,10 @@ def imageInput(device, src):
 
     elif src == 'From test set.': 
         # Image selector slider
-        imgpath = glob.glob('data/images/*')
+        imgpath = glob.glob('data/images/test/*')
         imgsel = st.slider('Select random images from test set.', min_value=1, max_value=len(imgpath), step=1) 
         image_file = imgpath[imgsel-1]
-        submit = st.button("Predict!")
+        submit = st.button("Predict PCB Defect!")
         col1, col2 = st.columns(2)
         with col1:
             img = Image.open(image_file)
@@ -60,7 +60,7 @@ def imageInput(device, src):
                     im_base64.save(os.path.join('data/outputs', os.path.basename(image_file)))
                 #--Display predicton
                     img_ = Image.open(os.path.join('data/outputs', os.path.basename(image_file)))
-                    st.image(img_, caption='Model Prediction(s)')
+                    st.image(img_, caption='AI Defect Prediction(s)')
 
 
 
