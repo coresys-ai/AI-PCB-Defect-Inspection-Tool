@@ -65,25 +65,18 @@ def imageInput(src):
 
 def main():
     
-    st.header('AI PCB Defect Detection Tool ')
-    st.subheader('👈🏽 Select the options')
-    
-    # -- Sidebar
+    st.header('AI Tool for PCB Defect Detection')
+    st.subheader('👈🏽 Select the Image Source options')
     st.sidebar.title('⚙️Options')
-    src = st.sidebar.radio("Select input source.", ['From test PCB Images', 'Upload your own PCB Image'])
-    imageInput(src)
-    #option = st.sidebar.radio("Input type.", ['Image'], disabled = True)
-    #if torch.cuda.is_available():
-        #deviceoption = st.sidebar.radio("Select compute Device.", ['cpu', 'cuda'], disabled = False, index=1)
-    #else:
-        #deviceoption = st.sidebar.radio("Select compute Device.", ['cpu', 'cuda'], disabled = True, index=0)
-    # -- End of Sidebar
-
+    datasrc = st.sidebar.radio("Select input source.", ['From test PCB Images', 'Upload your own PCB Image'])
+    imageInput(datasrc)
    
+
 if __name__ == '__main__':
-  
     main()
-#@st.cache
+    
+    
+@st.cache
 def loadModel():
     start_dl = time.time()
     model_file = wget.download('https://archive.org/download/yoloTrained/yoloTrained.pt', out="pcb_1st/weights/")
