@@ -69,17 +69,14 @@ def main():
     
     # -- Sidebar
     st.sidebar.title('⚙️Options')
-    datasrc = st.sidebar.radio("Select input source.", ['From test PCB Images', 'Upload your own PCB Image'])
-    imageInput(datasrc)
+    src = st.sidebar.radio("Select input source.", ['From test PCB Images', 'Upload your own PCB Image'])
+    imageInput(src)
     #option = st.sidebar.radio("Input type.", ['Image'], disabled = True)
     #if torch.cuda.is_available():
         #deviceoption = st.sidebar.radio("Select compute Device.", ['cpu', 'cuda'], disabled = False, index=1)
     #else:
         #deviceoption = st.sidebar.radio("Select compute Device.", ['cpu', 'cuda'], disabled = True, index=0)
     # -- End of Sidebar
-
-        
-  
 
    
 if __name__ == '__main__':
