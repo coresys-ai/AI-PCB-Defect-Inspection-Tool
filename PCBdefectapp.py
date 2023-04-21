@@ -13,7 +13,7 @@ def imageInput(src):
     
     if src == 'Upload your own PCB Image':
         image_file = st.file_uploader("Upload An Image", type=['png', 'jpeg', 'jpg'])
-        st.subheader=("Predicted PCB Defect!")
+        st.info("Predicted PCB Defect!")
         col1, col2 = st.columns(2)
         if image_file is not None:
             img = Image.open(image_file)
