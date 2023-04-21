@@ -85,5 +85,3 @@ def loadModel():
     print(f"Model Downloaded, ETA:{finished_dl-start_dl}")
     
 loadModel()
-
-
