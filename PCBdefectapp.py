@@ -64,7 +64,7 @@ def imageInput(src):
                     st.image(img_, caption='AI Defect PredictionS')
 
 def main():
-    st.set_page_config(page_title ="CORESYS", page_icon =":guardsman:", layout ="wide")
+   
     st.image("logo.jpg", width = 300)
     st.title("Coresys Limited")
     st.header('AI Tool for PCB Defect Detection')
