@@ -83,7 +83,7 @@ def main():
     st.subheader('👈🏽 Select the options')
 
     #if option:    
-    #imageInput(deviceoption, datasrc)
+    imageInput(device, src)
     #elif option == "Video": 
         #videoInput(deviceoption, datasrc)
 
