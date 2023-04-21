@@ -26,7 +26,7 @@ def imageInput(device, src):
 
             #call Model prediction--
             model = torch.hub.load('ultralytics/yolov5', 'custom', path='models/yoloTrained.pt', force_reload=True) 
-            model.cuda() if device == 'cuda' else model.cpu()
+            #model.cuda() if device == 'cuda' else model.cpu()
             pred = model(imgpath)
             pred.render()  # render bbox in image
             for im in pred.ims:
@@ -73,19 +73,18 @@ def main():
     st.sidebar.title('⚙️Options')
     datasrc = st.sidebar.radio("Select input source.", ['From test PCB Images', 'Upload your own PCB Image'])
     option = st.sidebar.radio("Input type.", ['Image'], disabled = True)
-    if torch.cuda.is_available():
-        deviceoption = st.sidebar.radio("Select compute Device.", ['cpu', 'cuda'], disabled = False, index=1)
-    else:
-        deviceoption = st.sidebar.radio("Select compute Device.", ['cpu', 'cuda'], disabled = True, index=0)
+    #if torch.cuda.is_available():
+        #deviceoption = st.sidebar.radio("Select compute Device.", ['cpu', 'cuda'], disabled = False, index=1)
+    #else:
+        #deviceoption = st.sidebar.radio("Select compute Device.", ['cpu', 'cuda'], disabled = True, index=0)
     # -- End of Sidebar
 
     st.header('📦 AI PCB Defect Detection Tool ')
     st.subheader('👈🏽 Select the options')
 
     if option == "Image":
-        imageInput(deviceoption, datasrc)
-    #elif option == "Video": 
-        #videoInput(deviceoption, datasrc)
+        imageInput(datasrc)
+  
 
    
 if __name__ == '__main__':
