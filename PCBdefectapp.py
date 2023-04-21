@@ -65,26 +65,7 @@ def imageInput(device, src):
 
 
 
-def videoInput(device, src):
-    uploaded_video = st.file_uploader("Upload Video", type=['mp4', 'mpeg', 'mov'])
-    if uploaded_video != None:
 
-        ts = datetime.timestamp(datetime.now())
-        imgpath = os.path.join('data/uploads', str(ts)+uploaded_video.name)
-        outputpath = os.path.join('data/video_output', os.path.basename(imgpath))
-
-        with open(imgpath, mode='wb') as f:
-            f.write(uploaded_video.read())  # save video to disk
-
-        st_video = open(imgpath, 'rb')
-        video_bytes = st_video.read()
-        st.video(video_bytes)
-        st.write("Uploaded Video")
-        detect(weights="models/yoloTrained.pt", source=imgpath, device=0) if device == 'cuda' else detect(weights="models/yoloTrained.pt", source=imgpath, device='cpu')
-        st_video2 = open(outputpath, 'rb')
-        video_bytes2 = st_video2.read()
-        st.video(video_bytes2)
-        st.write("Model Prediction")
 
 
 def main():
@@ -94,7 +75,7 @@ def main():
     
         
                 
-    option = st.sidebar.radio("Select input type.", ['Image', 'Video'], disabled = True)
+    #option = st.sidebar.radio("Select input type.", ['Image', 'Video'], disabled = True)
     if torch.cuda.is_available():
         deviceoption = st.sidebar.radio("Select compute Device.", ['cpu', 'cuda'], disabled = False, index=1)
     else:
@@ -103,11 +84,11 @@ def main():
 
     st.header('📦 AI PCB Defect Detection Tool ')
     st.subheader('👈🏽 Select the options')
-    #st.sidebar.markdown("https://github.com/thepbordin/Obstacle-Detection-for-Blind-people-Deployment")
+
     if option == "Image":    
         imageInput(deviceoption, datasrc)
-    elif option == "Video": 
-        videoInput(deviceoption, datasrc)
+    #elif option == "Video": 
+        #videoInput(deviceoption, datasrc)
 
    
 if __name__ == '__main__':
