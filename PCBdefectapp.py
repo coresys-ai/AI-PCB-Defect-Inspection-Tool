@@ -9,7 +9,7 @@ import os
 import wget
 import time
 
-def imageInput(device, src):
+def imageInput(src):
     
     if src == 'Upload your own PCB Image':
         image_file = st.file_uploader("Upload An Image", type=['png', 'jpeg', 'jpg'])
