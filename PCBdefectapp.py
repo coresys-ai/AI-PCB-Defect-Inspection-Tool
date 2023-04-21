@@ -63,6 +63,10 @@ def imageInput(src):
                     st.image(img_, caption='AI Defect Prediction(s)')
 
 def main():
+    
+    st.header('AI PCB Defect Detection Tool ')
+    st.subheader('👈🏽 Select the options')
+    
     # -- Sidebar
     st.sidebar.title('⚙️Options')
     datasrc = st.sidebar.radio("Select input source.", ['From test PCB Images', 'Upload your own PCB Image'])
@@ -74,8 +78,6 @@ def main():
         #deviceoption = st.sidebar.radio("Select compute Device.", ['cpu', 'cuda'], disabled = True, index=0)
     # -- End of Sidebar
 
-    st.header('📦 AI PCB Defect Detection Tool ')
-    st.subheader('👈🏽 Select the options')
         
   
 
