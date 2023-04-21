@@ -13,7 +13,6 @@ def imageInput(src):
     
     if src == 'Upload your own PCB Image':
         image_file = st.file_uploader("Upload An Image", type=['png', 'jpeg', 'jpg'])
-        st.info("Predicted PCB Defect!")
         col1, col2 = st.columns(2)
         if image_file is not None:
             img = Image.open(image_file)
@@ -38,7 +37,7 @@ def imageInput(src):
             
             img_ = Image.open(outputpath)
             with col2:
-                st.image(img_, caption='Model Predictions', use_column_width=True)
+                st.image(img_, caption='AI PCB Predictions', use_column_width=True)
 
     elif src == 'From test PCB Images': 
         # Image selector slider
@@ -61,10 +60,10 @@ def imageInput(src):
                     im_base64.save(os.path.join('data/outputs', os.path.basename(image_file)))
                 #--Display predicton
                     img_ = Image.open(os.path.join('data/outputs', os.path.basename(image_file)))
-                    st.image(img_, caption='AI Defect PredictionS')
+                    st.image(img_, caption='AI PCB Predictions')
 
 def main():
-   
+    
     st.image("logo.JPG", width = 500)
     st.title("Coresys Limited")
     st.header("AI Tool for PCB Defect Detection")
