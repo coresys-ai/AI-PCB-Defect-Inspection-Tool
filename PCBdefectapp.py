@@ -67,7 +67,7 @@ def main():
     st.image("logo.JPG", width = 500)
     st.title("Coresys Limited")
     st.header("AI Tool for PCB Defect Detection")
-    st.subheader("👈🏽 Select the Image Source options")
+    #st.subheader("👈🏽 Select the Image Source options")
     st.sidebar.title('⚙️Options')
     src = st.sidebar.radio("Select input source.", ['From test PCB Images', 'Upload your own PCB Image'])
     imageInput(src)
