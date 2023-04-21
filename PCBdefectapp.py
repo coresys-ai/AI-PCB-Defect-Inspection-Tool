@@ -52,7 +52,7 @@ def imageInput(src):
         with col2:            
             if image_file is not None and submit:
                 #call Model prediction--
-                model = torch.hub.load('ultralytics/yolov5', 'custom', path= 'pcb_1st/weights/best.pt', force_reload=True) 
+                model = torch.hub.load('ultralytics/yolov5','custom', path= 'pcb_1st/weights/best.pt', force_reload=True) 
                 pred = model(image_file)
                 pred.render()  # render bbox in image
                 for im in pred.ims:
@@ -60,7 +60,7 @@ def imageInput(src):
                     im_base64.save(os.path.join('data/outputs', os.path.basename(image_file)))
                 #--Display predicton
                     img_ = Image.open(os.path.join('data/outputs', os.path.basename(image_file)))
-                    st.image(img_, caption='AI Defect Prediction(s)')
+                    st.image(img_, caption='AI Defect PredictionS')
 
 def main():
     
