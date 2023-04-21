@@ -65,7 +65,7 @@ def imageInput(src):
 
 def main():
    
-    st.image("logo.JPG", width = 300)
+    st.image("logo.JPG", width = 500)
     st.title("Coresys Limited")
     st.header('AI Tool for PCB Defect Detection')
     st.subheader('👈🏽 Select the Image Source options')
