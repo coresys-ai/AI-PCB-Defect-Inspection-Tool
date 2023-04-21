@@ -109,8 +109,7 @@ def main():
     elif option == "Video": 
         videoInput(deviceoption, datasrc)
 
-    
-
+   
 if __name__ == '__main__':
   
     main()
