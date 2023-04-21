@@ -71,8 +71,8 @@ def main():
     imageInput(src)
    
 if __name__ == '__main__':
-    main()
     
+    main()
     
 @st.cache
 def loadModel():
@@ -80,4 +80,5 @@ def loadModel():
     model_file = wget.download('https://archive.org/download/yoloTrained/yoloTrained.pt', out="models/")
     finished_dl = time.time()
     print(f"Model Downloaded, ETA:{finished_dl-start_dl}")
+    
 loadModel()
