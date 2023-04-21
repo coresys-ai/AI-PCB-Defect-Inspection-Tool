@@ -17,7 +17,7 @@ def imageInput(src):
         if image_file is not None:
             img = Image.open(image_file)
             with col1:
-                st.image(img, caption='Uploaded Image', use_column_width='always')
+                st.image(img, caption='Uploaded PCB Image', use_column_width='always')
             ts = datetime.timestamp(datetime.now())
             imgpath = os.path.join('data/uploads', str(ts)+image_file.name)
             outputpath = os.path.join('data/outputs', os.path.basename(imgpath))
@@ -25,7 +25,7 @@ def imageInput(src):
                 f.write(image_file.getbuffer())
 
             #call Model prediction--
-            model = torch.hub.load('ultralytics/yolov5', 'custom', path='models/yoloTrained.pt', force_reload=True) 
+            model = torch.hub.load('ultralytics/yolov5', 'custom', path='yoloTrained.pt', force_reload=True) 
             #model.cuda() if device == 'cuda' else model.cpu()
             pred = model(imgpath)
             pred.render()  # render bbox in image
@@ -52,7 +52,7 @@ def imageInput(src):
         with col2:            
             if image_file is not None and submit:
                 #call Model prediction--
-                model = torch.hub.load('ultralytics/yolov5', 'custom', path='models/yoloTrained.pt', force_reload=True) 
+                model = torch.hub.load('ultralytics/yolov5', 'custom', path='yoloTrained.pt', force_reload=True) 
                 pred = model(image_file)
                 pred.render()  # render bbox in image
                 for im in pred.ims:
