@@ -83,7 +83,7 @@ def main():
 if __name__ == '__main__':
   
     main()
-@st.cache
+#@st.cache
 def loadModel():
     start_dl = time.time()
     model_file = wget.download('https://archive.org/download/yoloTrained/yoloTrained.pt', out="pcb_1st/weights/")
