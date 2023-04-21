@@ -82,8 +82,8 @@ def main():
     st.header('📦 AI PCB Defect Detection Tool ')
     st.subheader('👈🏽 Select the options')
 
-    if option:    
-        imageInput(deviceoption, datasrc)
+    #if option:    
+    imageInput(deviceoption, datasrc)
     #elif option == "Video": 
         #videoInput(deviceoption, datasrc)
 
