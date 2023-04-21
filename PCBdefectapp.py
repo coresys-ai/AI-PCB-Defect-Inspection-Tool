@@ -38,7 +38,7 @@ def imageInput(src):
             
             img_ = Image.open(outputpath)
             with col2:
-                st.image(img_, caption='Model Prediction(s)', use_column_width=True)
+                st.image(img_, caption='Model Predictions', use_column_width=True)
 
     elif src == 'From test PCB Images': 
         # Image selector slider
@@ -64,14 +64,12 @@ def imageInput(src):
                     st.image(img_, caption='AI Defect PredictionS')
 
 def main():
-    
     st.header('AI Tool for PCB Defect Detection')
     st.subheader('👈🏽 Select the Image Source options')
     st.sidebar.title('⚙️Options')
-    datasrc = st.sidebar.radio("Select input source.", ['From test PCB Images', 'Upload your own PCB Image'])
-    imageInput(datasrc)
+    src = st.sidebar.radio("Select input source.", ['From test PCB Images', 'Upload your own PCB Image'])
+    imageInput(src)
    
-
 if __name__ == '__main__':
     main()
     
