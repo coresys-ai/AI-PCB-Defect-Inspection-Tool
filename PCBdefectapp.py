@@ -17,7 +17,7 @@ def imageInput(src):
         if image_file is not None:
             img = Image.open(image_file)
             with col1:
-                st.image(img, caption='Uploaded PCB Image', use_column_width='always')
+                st.image(img, caption='Uploaded PCB Image', use_column_width=True)
             ts = datetime.timestamp(datetime.now())
             imgpath = os.path.join('data/uploads', str(ts)+image_file.name)
             outputpath = os.path.join('data/outputs', os.path.basename(imgpath))
@@ -37,7 +37,7 @@ def imageInput(src):
             
             img_ = Image.open(outputpath)
             with col2:
-                st.image(img_, caption='Model Prediction(s)', use_column_width='always')
+                st.image(img_, caption='Model Prediction(s)', use_column_width=True)
 
     elif src == 'From test PCB Images': 
         # Image selector slider
