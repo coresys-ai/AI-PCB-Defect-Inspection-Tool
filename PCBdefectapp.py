@@ -5,7 +5,7 @@ import numpy as np
 from PIL import Image
 
 # Load the YOLOv5 model
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='runs/train/pcb_1st/weights/best.pt')
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt')
 
 # Define the inference function
 def detect_pcb(image):
