@@ -86,7 +86,7 @@ if __name__ == '__main__':
 @st.cache
 def loadModel():
     start_dl = time.time()
-    model_file = wget.download('https://archive.org/download/yoloTrained/yoloTrained.pt', out="models/")
+    model_file = wget.download('https://archive.org/download/yoloTrained/yoloTrained.pt', out="pcb_1st/weights/")
     finished_dl = time.time()
     print(f"Model Downloaded, ETA:{finished_dl-start_dl}")
 loadModel()
