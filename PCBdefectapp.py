@@ -72,10 +72,7 @@ def main():
     # -- Sidebar
     st.sidebar.title('⚙️Options')
     datasrc = st.sidebar.radio("Select input source.", ['From test PCB Images', 'Upload your own PCB Image'])
-    
-        
-                
-    #option = st.sidebar.radio("Select input type.", ['Image', 'Video'], disabled = True)
+    option = st.sidebar.radio("Input type.", ['Image'], disabled = True)
     if torch.cuda.is_available():
         deviceoption = st.sidebar.radio("Select compute Device.", ['cpu', 'cuda'], disabled = False, index=1)
     else:
@@ -85,7 +82,7 @@ def main():
     st.header('📦 AI PCB Defect Detection Tool ')
     st.subheader('👈🏽 Select the options')
 
-    if option == "Image":    
+    if option:    
         imageInput(deviceoption, datasrc)
     #elif option == "Video": 
         #videoInput(deviceoption, datasrc)
